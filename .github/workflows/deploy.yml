@@ -1,0 +1,57 @@
+name: Deploy Eleventy Static Pages
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            # - name: Set up Node.js
+            #   uses: actions/setup-node@v3
+            #   with:
+            #       node-version: 18
+
+            # - name: Install dependencies
+            #   run: npm i
+
+            # - name: Build Eleventy static pages
+            #   run: npm run build
+
+            - uses: denoland/setup-deno@v1
+              with:
+                deno-version: v1.x
+
+            - name: Build Eleventy static pages
+              run: deno task build
+
+            - name: Upload pages artifact
+              uses: actions/upload-pages-artifact@v1
+              with:
+                  name: github-pages
+                  path: _site
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+
+        permissions:
+            pages: write
+            id-token: write
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Deploy pages
+              uses: actions/deploy-pages@v2
+              id: deployment
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}

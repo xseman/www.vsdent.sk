@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta name="vsdent" content="Dental clinic" />
+
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="https://esm.sh/font-awesome@4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://esm.sh/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+		
+		<script type="module" src="https://esm.sh/bootstrap@4.3.1/dist/js/bootstrap.bundle.js"></script>
+	</head>
+
+	<body>
+		<nav class="shadow navbar navbar-expand-md navbar-light">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<div class="row">
+						<div class="col">
+							<img src="/img/logo.svg" alt="logo" height="80" inline />
+						</div>
+						<div class="col mt-4 font-weight-lighter logo-text">
+							MDDr. Valentína Semanová
+						</div>
+					</div> 
+				</a>
+				<button
+					aria-controls="basic-navbar-nav"
+					type="button"
+					aria-label="Toggle navigation"
+					class="navbar-toggler collapsed"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="navbar-collapse collapse"
+					id="basic-navbar-nav"
+					style="text-align: right"
+				>
+					<div class="ml-auto navbar-nav">
+						<a href="/sluzby" class="ml-2 mr-1 nav-link">Služby</a>
+						<a href="/cennik" class="ml-2 mr-1 nav-link">Cenník</a>
+						<a href="/kontakt" class="ml-2 mr-1 nav-link">Objednať sa</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			{{ content | safe }}
+		</main>
+
+		<footer class="bg-light small border-top">
+			<div class="container mb-1">
+				<div class="row lead">
+					<div class="col-lg col-md mt-4 text-center border-right">
+						<h4 class="text-uppercase mb-4">Kontakt</h4>
+						<ul>
+							<li>
+								<h6>
+									<span>
+										<i
+											class="fa fa-fw fa-phone"
+											aria-hidden="true"
+										></i>
+									</span>
+									Číslo:
+								</h6>
+								<p>056/649 14 44</p>
+							</li>
+							<li>
+								<h6>
+									<span>
+										<i
+											class="fa fa-fw fa-map-marker"
+											aria-hidden="true"
+										></i>
+									</span>
+									Adresa:
+								</h6>
+								<p>
+									1. mája 84/1 <br />
+									072 22 Strážske
+								</p>
+							</li>
+							<li>
+								<h6>
+									<span>
+										<i
+											class="fa fa-fw fa-envelope-o"
+											aria-hidden="true"
+										></i>
+									</span>
+									E-mail:
+								</h6>
+								<a href="mailto:info@vsdent.sk"
+									>info@vsdent.sk</a
+								>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-lg col-md mt-4 text-center">
+						<h4 class="text-uppercase">Otváracie hodiny</h4>
+						<div>
+							<div class="d-inline mr-4">PO:</div>
+							<div class="d-inline">8:00 - 15:30</div>
+						</div>
+
+						<div>
+							<di class="d-inline mr-4">UT:</di>
+							<di class="d-inline" v>8:00 - 15:30</di>
+						</div>
+
+						<div>
+							<div class="d-inline mr-4">ST:</div>
+							<div class="d-inline">8:00 - 15:30</div>
+						</div>
+
+						<div>
+							<div class="d-inline mr-4">ŠT:</div>
+							<div class="d-inline">8:00 - 15:30</div>
+						</div>
+
+						<div>
+							<div class="d-inline mr-4">PI:</div>
+							<div class="d-inline">8:00 - 15:30</div>
+						</div>
+					</div>
+
+					<div class="col-lg col-md mt-4 text-center border-left">
+						<h4 class="text-uppercase mb-4">Sledujte nás na</h4>
+						<a href="https://www.facebook.com/dentalnecentrumstrazske">
+							<i
+								class="fa fa-facebook-square rounded-circle p-2 border mr-4 mt-3"
+								aria-hidden="true"
+								style="font-size: 40px"
+							></i>
+						</a>
+						<a href="https://www.instagram.com/vsdent/">
+							<i
+								class="fa fa-instagram rounded-circle p-2 border mr-4 mt-3"
+								aria-hidden="true"
+								style="font-size: 40px"
+							></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
