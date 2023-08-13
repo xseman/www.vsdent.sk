@@ -11,9 +11,8 @@
 		<title>{{ title }}</title>
 		<link rel="stylesheet" href="https://esm.sh/font-awesome@4.7.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="https://esm.sh/bootstrap@4.3.1/dist/css/bootstrap.min.css" />
+		<script type="module" src="https://esm.sh/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" href="/css/style.css" />
-		
-		<script type="module" src="https://esm.sh/bootstrap@4.3.1/dist/js/bootstrap.bundle.js"></script>
 	</head>
 
 	<body>
@@ -29,14 +28,16 @@
 						</div>
 					</div> 
 				</a>
+
 				<button
-					aria-controls="basic-navbar-nav"
 					type="button"
-					aria-label="Toggle navigation"
 					class="navbar-toggler collapsed"
+					data-toggle="collapse"
+					data-target="#basic-navbar-nav"
 				>
 					<span class="navbar-toggler-icon"></span>
 				</button>
+
 				<div
 					class="navbar-collapse collapse"
 					id="basic-navbar-nav"
