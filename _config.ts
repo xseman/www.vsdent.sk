@@ -16,6 +16,7 @@ site
 	.copy("css")
 	.copy("img")
 	.copy("svg")
+	.copy("404.html")
 	.use(metas())
 	.use(sitemap())
 	.use(inline())
