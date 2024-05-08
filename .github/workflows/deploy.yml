@@ -1,6 +1,7 @@
-name: Deploy Eleventy Static Pages
+name: Build & Deploy static page
 
 on:
+    workflow_dispatch: # enable manual triggering
     push:
         branches:
             - master
@@ -11,28 +12,17 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v3
-
-            # - name: Set up Node.js
-            #   uses: actions/setup-node@v3
-            #   with:
-            #       node-version: 18
-
-            # - name: Install dependencies
-            #   run: npm i
-
-            # - name: Build Eleventy static pages
-            #   run: npm run build
+              uses: actions/checkout@v4
 
             - uses: denoland/setup-deno@v1
               with:
                 deno-version: v1.x
 
-            - name: Build Eleventy static pages
+            - name: Build static page
               run: deno task build
 
             - name: Upload pages artifact
-              uses: actions/upload-pages-artifact@v1
+              uses: actions/upload-pages-artifact@v3
               with:
                   name: github-pages
                   path: _site
@@ -51,7 +41,7 @@ jobs:
 
         steps:
             - name: Deploy pages
-              uses: actions/deploy-pages@v2
+              uses: actions/deploy-pages@v4
               id: deployment
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
